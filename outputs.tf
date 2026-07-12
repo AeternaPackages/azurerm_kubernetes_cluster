@@ -1,4 +1,9 @@
 # --- azurerm_kubernetes_cluster ---
+output "kubernetes_clusters_id" {
+  description = "Map of id values across all kubernetes_clusters, keyed the same as var.kubernetes_clusters"
+  value       = module.kubernetes_clusters.kubernetes_clusters_id
+}
+
 output "kubernetes_clusters_aci_connector_linux" {
   description = "Map of aci_connector_linux values across all kubernetes_clusters, keyed the same as var.kubernetes_clusters"
   value       = module.kubernetes_clusters.kubernetes_clusters_aci_connector_linux
@@ -357,6 +362,11 @@ output "kubernetes_clusters_workload_identity_enabled" {
 }
 
 # --- azurerm_kubernetes_cluster_deployment_safeguard ---
+output "kubernetes_cluster_deployment_safeguards_id" {
+  description = "Map of id values across all kubernetes_cluster_deployment_safeguards, keyed the same as var.kubernetes_cluster_deployment_safeguards"
+  value       = module.kubernetes_cluster_deployment_safeguards.kubernetes_cluster_deployment_safeguards_id
+}
+
 output "kubernetes_cluster_deployment_safeguards_excluded_namespaces" {
   description = "Map of excluded_namespaces values across all kubernetes_cluster_deployment_safeguards, keyed the same as var.kubernetes_cluster_deployment_safeguards"
   value       = module.kubernetes_cluster_deployment_safeguards.kubernetes_cluster_deployment_safeguards_excluded_namespaces
@@ -378,6 +388,11 @@ output "kubernetes_cluster_deployment_safeguards_pod_security_standards_level" {
 }
 
 # --- azurerm_kubernetes_cluster_node_pool ---
+output "kubernetes_cluster_node_pools_id" {
+  description = "Map of id values across all kubernetes_cluster_node_pools, keyed the same as var.kubernetes_cluster_node_pools"
+  value       = module.kubernetes_cluster_node_pools.kubernetes_cluster_node_pools_id
+}
+
 output "kubernetes_cluster_node_pools_auto_scaling_enabled" {
   description = "Map of auto_scaling_enabled values across all kubernetes_cluster_node_pools, keyed the same as var.kubernetes_cluster_node_pools"
   value       = module.kubernetes_cluster_node_pools.kubernetes_cluster_node_pools_auto_scaling_enabled
@@ -599,6 +614,11 @@ output "kubernetes_cluster_node_pools_zones" {
 }
 
 # --- azurerm_kubernetes_cluster_trusted_access_role_binding ---
+output "kubernetes_cluster_trusted_access_role_bindings_id" {
+  description = "Map of id values across all kubernetes_cluster_trusted_access_role_bindings, keyed the same as var.kubernetes_cluster_trusted_access_role_bindings"
+  value       = module.kubernetes_cluster_trusted_access_role_bindings.kubernetes_cluster_trusted_access_role_bindings_id
+}
+
 output "kubernetes_cluster_trusted_access_role_bindings_kubernetes_cluster_id" {
   description = "Map of kubernetes_cluster_id values across all kubernetes_cluster_trusted_access_role_bindings, keyed the same as var.kubernetes_cluster_trusted_access_role_bindings"
   value       = module.kubernetes_cluster_trusted_access_role_bindings.kubernetes_cluster_trusted_access_role_bindings_kubernetes_cluster_id
@@ -620,6 +640,11 @@ output "kubernetes_cluster_trusted_access_role_bindings_source_resource_id" {
 }
 
 # --- azurerm_kubernetes_fleet_member ---
+output "kubernetes_fleet_members_id" {
+  description = "Map of id values across all kubernetes_fleet_members, keyed the same as var.kubernetes_fleet_members"
+  value       = module.kubernetes_fleet_members.kubernetes_fleet_members_id
+}
+
 output "kubernetes_fleet_members_group" {
   description = "Map of group values across all kubernetes_fleet_members, keyed the same as var.kubernetes_fleet_members"
   value       = module.kubernetes_fleet_members.kubernetes_fleet_members_group
