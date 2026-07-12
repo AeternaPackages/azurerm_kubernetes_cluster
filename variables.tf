@@ -223,11 +223,11 @@ EOT
       node_count  = optional(number)
       node_labels = optional(map(string))
       node_network_profile = optional(object({
-        allowed_host_ports = optional(object({
+        allowed_host_ports = optional(list(object({
           port_end   = optional(number)
           port_start = optional(number)
           protocol   = optional(string)
-        }))
+        })))
         application_security_group_ids = optional(list(string))
         node_public_ip_tags            = optional(map(string))
       }))
@@ -341,10 +341,10 @@ EOT
       duration     = number
       frequency    = string
       interval     = number
-      not_allowed = optional(object({
+      not_allowed = optional(list(object({
         end   = string
         start = string
-      }))
+      })))
       start_date = optional(string)
       start_time = optional(string)
       utc_offset = optional(string)
@@ -356,10 +356,10 @@ EOT
       duration     = number
       frequency    = string
       interval     = number
-      not_allowed = optional(object({
+      not_allowed = optional(list(object({
         end   = string
         start = string
-      }))
+      })))
       start_date = optional(string)
       start_time = optional(string)
       utc_offset = optional(string)
@@ -375,14 +375,14 @@ EOT
       license = optional(string)
     }))
     maintenance_window = optional(object({
-      allowed = optional(object({
+      allowed = optional(list(object({
         day   = string
         hours = set(number)
-      }))
-      not_allowed = optional(object({
+      })))
+      not_allowed = optional(list(object({
         end   = string
         start = string
-      }))
+      })))
     }))
     kubelet_identity = optional(object({
       client_id                 = optional(string)
@@ -559,11 +559,11 @@ EOT
         transparent_huge_page_enabled = optional(string)
       }))
       node_network_profile = optional(object({
-        allowed_host_ports = optional(object({
+        allowed_host_ports = optional(list(object({
           port_end   = optional(number)
           port_start = optional(number)
           protocol   = optional(string)
-        }))
+        })))
         application_security_group_ids = optional(list(string))
         node_public_ip_tags            = optional(map(string))
       }))
