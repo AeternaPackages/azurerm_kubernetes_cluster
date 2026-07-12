@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.kubernetes_clusters : {
       for k2, v2 in coalesce(v1.kubernetes_cluster_deployment_safeguards, {}) :
       "${k1}/${k2}" => merge(v2, {
-        kubernetes_cluster_id = module.kubernetes_clusters.kubernetes_clusters["${k1}"].id
+        kubernetes_cluster_id = module.kubernetes_clusters.kubernetes_clusters_id["${k1}"]
       })
     }
   ]...)
@@ -14,7 +14,7 @@ locals {
     for k1, v1 in var.kubernetes_clusters : {
       for k2, v2 in coalesce(v1.kubernetes_cluster_node_pools, {}) :
       "${k1}/${k2}" => merge(v2, {
-        kubernetes_cluster_id = module.kubernetes_clusters.kubernetes_clusters["${k1}"].id
+        kubernetes_cluster_id = module.kubernetes_clusters.kubernetes_clusters_id["${k1}"]
       })
     }
   ]...)
@@ -23,7 +23,7 @@ locals {
     for k1, v1 in var.kubernetes_clusters : {
       for k2, v2 in coalesce(v1.kubernetes_cluster_trusted_access_role_bindings, {}) :
       "${k1}/${k2}" => merge(v2, {
-        kubernetes_cluster_id = module.kubernetes_clusters.kubernetes_clusters["${k1}"].id
+        kubernetes_cluster_id = module.kubernetes_clusters.kubernetes_clusters_id["${k1}"]
       })
     }
   ]...)
@@ -32,7 +32,7 @@ locals {
     for k1, v1 in var.kubernetes_clusters : {
       for k2, v2 in coalesce(v1.kubernetes_fleet_members, {}) :
       "${k1}/${k2}" => merge(v2, {
-        kubernetes_cluster_id = module.kubernetes_clusters.kubernetes_clusters["${k1}"].id
+        kubernetes_cluster_id = module.kubernetes_clusters.kubernetes_clusters_id["${k1}"]
       })
     }
   ]...)
